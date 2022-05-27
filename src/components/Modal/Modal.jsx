@@ -6,7 +6,7 @@ const modalRoot = document.querySelector('#modal-root');
 
 export default class Modal extends Component {
     static propTypes = {
-        children: PropTypes.number.isRequired,
+        children: PropTypes.node.isRequired,
         onClose: PropTypes.func.isRequired,
     };
 
