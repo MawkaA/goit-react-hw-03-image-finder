@@ -93,16 +93,15 @@ class App extends Component {
                 {loading && !showModal && (
                     <Loader />
                 )}
-
                 {!loading && images[0] && (
+                    
                     <Button onClick={handleOnLoadClick} />
+                   
                 )}
 
                 {showModal && (
                     <Modal onClose={toggleModal}>
-                        {loading && (
-                            <Loader  />
-                        )}
+                        {loading && ( <Loader  />)}
                         <img
                             src={largeImage.largeImageURL}
                             alt={largeImage.tags}
