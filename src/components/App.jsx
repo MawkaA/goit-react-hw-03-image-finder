@@ -4,7 +4,7 @@ import { Component } from 'react';
 import { ToastContainer } from 'react-toastify';
 import { fetchPictures } from '../services/PicturesAPI';
 import scrollPageDown from '../scrollPageDown';
-
+import styles from './App.css';
 
 import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
@@ -78,7 +78,7 @@ class App extends Component {
         const { images, loading, showModal, largeImage } = this.state;
 
         return (
-            <>
+            <div className={styles.App}>
                 <ToastContainer autoClose={3000} />
                 <Searchbar onSubmit={handlerFormSubmit} />
                 {loading && (
@@ -110,7 +110,7 @@ class App extends Component {
                         />
                     </Modal>
                 )}
-            </>
+            </div>
         );
     }
 }
