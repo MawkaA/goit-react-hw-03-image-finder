@@ -81,9 +81,7 @@ class App extends Component {
             <div className={styles.App}>
                 <ToastContainer autoClose={3000} />
                 <Searchbar onSubmit={handlerFormSubmit} />
-                {loading && (
-                    <Loader />
-                )}
+                {loading && (  <Loader />)}
                 {images.length !== 0 && (
                     <ImageGallery
                         images={images}
