@@ -17,6 +17,7 @@ class App extends Component {
         searchQuery: '',
         page: 1,
         images: [],
+        error:'',
         loading: false,
         showModal: false,
         largeImage: {},
@@ -58,7 +59,7 @@ class App extends Component {
         this.setState({ loading: true });
         this.fetchImages()
             .then(() => scrollPageDown())
-            .catch(error => console.log(error))
+            .catch(this.setState({ error: 'Picture not found' }))
             .finally(() => this.setState({ loading: false }));
     };
 
