@@ -28,7 +28,7 @@ class App extends Component {
 
         if (searchQuery !== prevState.searchQuery) {
             this.fetchImages()
-                .catch(error => console.log(error))
+                .catch(error => console.log({ error: 'Picture not found' }))
                 .finally(() => this.setState({ loading: false }));
         }
     }
@@ -94,7 +94,7 @@ class App extends Component {
                 )}
                 {!loading && images[0] && (
                     
-                    <Button onClick={handleOnLoadClick} />
+                    <Button onClick={handleOnLoadClick} text="Load more"/>
                    
                 )}
 
