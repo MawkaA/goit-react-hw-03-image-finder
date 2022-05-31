@@ -28,7 +28,8 @@ class App extends Component {
 
         if (searchQuery !== prevState.searchQuery) {
             this.fetchImages()
-                .catch(error => console.log({ error: 'Picture not found' }))
+                .catch(error => console.error(error),
+                alert('Picture is not found, try again'))
                 .finally(() => this.setState({ loading: false }));
         }
     }
